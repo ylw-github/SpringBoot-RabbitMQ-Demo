@@ -1,5 +1,6 @@
 package com.ylw.springboot.rabbitmq.consumer;
 
+import com.alibaba.fastjson.JSONObject;
 import com.rabbitmq.client.Channel;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
@@ -13,7 +14,7 @@ import java.util.Map;
 @Component
 public class FanoutSmsConsumer {
 
-    @RabbitHandler
+    @RabbitListener(queues = "fanout_sms_queue")
     public void process(String msg) {
         System.out.println("短信消费者获取生产者消息msg:" + msg);
 
@@ -54,7 +55,6 @@ public class FanoutSmsConsumer {
         // 手动签收
         channel.basicAck(deliveryTag, false);
     }*/
-
 
 
 

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class FanoutConfig {
 
-    // 邮件队列
+    /*// 邮件队列
     private String FANOUT_EMAIL_QUEUE = "fanout_eamil_queue";
 
     // 短信队列
@@ -45,5 +45,5 @@ public class FanoutConfig {
     @Bean
     Binding bindingExchangeSms(Queue fanOutSmsQueue, FanoutExchange fanoutExchange) {
         return BindingBuilder.bind(fanOutSmsQueue).to(fanoutExchange);
-    }
+    }*/
 }
