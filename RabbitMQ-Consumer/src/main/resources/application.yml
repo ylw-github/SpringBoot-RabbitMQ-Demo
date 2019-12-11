@@ -21,3 +21,5 @@ spring:
           max-attempts: 5
           ####重试间隔次数
           initial-interval: 3000
+        ####开启手动ack
+        #acknowledge-mode: manual
